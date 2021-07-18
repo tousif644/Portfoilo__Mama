@@ -1,0 +1,138 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+*{
+    cursor: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: none;
+
+    // height: 1080px;
+    // width: 1920px;
+    
+
+}
+
+.navbar{
+    overflow: hidden;
+    background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+cursor: none;
+
+}
+
+.navbar a{
+    float: right;
+    padding: 15px 20px;
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-family: "Poppins";
+    transition: 3s all ease;
+cursor: none;
+}
+
+.navbar a:hover{
+    filter: contrast(25px) blur(2px);
+    filter: blur(1px) opacity(2);
+}
+/* .image_navbar{
+    top: 0;
+   padding-left: -30px;
+} */
+
+.navbar .brand_name{
+    float: left;
+    padding-left: 60px;
+    font-size: 25px;
+    cursor: none;
+}
+
+
+
+.text_left{
+    padding-left:30px ;
+    display: flex;
+    margin-top: 12%;
+    flex-direction: column;
+    text-align: left;
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    color: white;
+    filter: contrast(25px) blur(1px);
+    font-family: 'Secular One', sans-serif;
+    cursor: none;
+}
+
+$speed : 15s;
+$word_count : 8;
+.word{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: word $speed  ease-in-out infinite;
+    cursor: none;
+    @for $i from 0 to $word_count {
+        &:nth-child(#{$i + 1}){
+            animation-delay:($speed / ($word_count + 1 ) * $i) - $speed;
+        }
+    }
+
+    
+}
+
+@keyframes word {
+    0%,5%,100%{
+        filter: blur(0px) ;
+        opacity: 1;
+    }
+    20%,80%{
+        filter: blur(1em);
+        opacity: 0;
+    }
+}
+
+
+.cursor{
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius:50% ;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: 0.3s all ease-out;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 350px;
+    padding-left: 15px;
+   
+    font-family: "Source Code Pro";
+    color: white;
+}
+
+.container h3{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    top: 50%;
+}
+
